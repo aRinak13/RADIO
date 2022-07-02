@@ -1,6 +1,6 @@
 public class Radio {
 
-    //Память объекта
+    //Память объекта Радио
     public int currentStation; //Текущая станция
     public int currentVolume; // Текущая громкость
 
