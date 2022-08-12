@@ -1,12 +1,39 @@
 public class Radio {
 
     //Память объекта Радио
-    public int currentStation; //Текущая станция
-    public int currentVolume; // Текущая громкость
+    private int currentStation; //Текущая станция
+    private int currentVolume; // Текущая громкость
+    private int amountStation = 10 - 1; //Количество радиостанций
+
+
+
+    //Конструктор кол-ва радиостанций
+    public Radio(int amountStation) {
+        this.amountStation = amountStation - 1;
+    }
+
+    //Конструктор
+    public Radio() {
+    }
+
+    // Текущая станция
+    public int getCurrentStation() {
+        return currentStation;
+    }
+
+    // Текущая громкость
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    // Кол-во радиостанций
+    public int getAmountStation() {
+        return amountStation;
+    }
 
     //Текущая станция
     public void setCurrentStation(int currentStation) {
-        if (currentStation > 9) {
+        if (currentStation > amountStation) {
             return;
         }
         if (currentStation < 0) {
@@ -17,12 +44,13 @@ public class Radio {
 
     //Максимальная станция
     public void setToMaxStation() {
-        currentStation = 9;
+
+       currentStation = amountStation;
     }
 
     //Текущая громкость
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > 10) {
+        if (currentVolume > 100) {
             return;
         }
         if (currentVolume < 0) {
@@ -33,12 +61,13 @@ public class Radio {
 
     //Максимальная громкость
     public void setToMaxVolume() {
-        currentVolume = 10;
+
+        currentVolume = 100;
     }
 
     //Переключение станции вперед
     public void nextStation() {
-        if (currentStation < 9) {
+        if (currentStation < amountStation) {
             this.currentStation = currentStation + 1;
         } else this.currentStation = 0;
     }
@@ -47,12 +76,12 @@ public class Radio {
     public void prevStation() {
         if (currentStation > 0) {
             currentStation = currentStation - 1;
-        } else currentStation = 9;
+        } else currentStation = amountStation;
     }
 
     //Увиличение громкости
     public void volumeUp() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
     }
