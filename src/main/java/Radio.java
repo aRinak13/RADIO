@@ -1,9 +1,11 @@
 public class Radio {
 
     //Память объекта Радио
-    public int currentStation; //Текущая станция
-    public int currentVolume; // Текущая громкость
-    public int amountStation = 10 - 1; //Количество радиостанций
+    private int currentStation; //Текущая станция
+    private int currentVolume; // Текущая громкость
+    private int amountStation = 10 - 1; //Количество радиостанций
+
+
 
     //Конструктор кол-ва радиостанций
     public Radio(int amountStation) {
@@ -14,9 +16,18 @@ public class Radio {
     public Radio() {
     }
 
+    // Текущая станция
+    public int getCurrentStation() {
+        return currentStation;
+    }
+
+    // Текущая громкость
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
     // Кол-во радиостанций
     public int getAmountStation() {
-
         return amountStation;
     }
 
